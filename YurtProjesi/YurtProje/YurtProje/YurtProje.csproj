@@ -1,0 +1,773 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{06265688-F0B8-4B42-912E-82A0B71190DE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YurtProje</RootNamespace>
+    <AssemblyName>YurtProje</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.1.Core, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxRichEdit.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxTreeList.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.Web.ASPxTreeList.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.Bootstrap.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.Web.Resources.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.Web.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Charts.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.Xpf.Charts.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Controls.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.Xpf.Controls.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Core.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.Xpf.Core.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Docking.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.Xpf.Docking.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.DocumentViewer.v18.1.Core.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.Xpf.DocumentViewer.v18.1.Core.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Gauges.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.Xpf.Gauges.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v18.1.Core.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.Xpf.Grid.v18.1.Core.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.LayoutControl.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.Xpf.LayoutControl.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.NavBar.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.Xpf.NavBar.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.PdfViewer.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.Xpf.PdfViewer.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Printing.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.Xpf.Printing.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.PropertyGrid.v18.1.resources, Version=18.1.5.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.Xpf.PropertyGrid.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.ReportDesigner.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.Xpf.ReportDesigner.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Ribbon.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.Xpf.Ribbon.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.RichEdit.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.Xpf.RichEdit.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Scheduler.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.Xpf.Scheduler.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Scheduling.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.Xpf.Scheduling.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.SpellChecker.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.Xpf.SpellChecker.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Spreadsheet.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.Xpf.Spreadsheet.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.Xpo.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.XtraBars.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.XtraCharts.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v18.1.Wizard.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.XtraCharts.v18.1.Wizard.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v18.1.Core.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.XtraGauges.v18.1.Core.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.XtraGrid.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.XtraNavBar.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPdfViewer.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.XtraPdfViewer.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.XtraPivotGrid.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.XtraPrinting.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v18.1.Extensions.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.XtraReports.v18.1.Extensions.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.XtraReports.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v18.1.Web.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.XtraReports.v18.1.Web.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v18.1.Extensions.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.XtraRichEdit.v18.1.Extensions.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.XtraRichEdit.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v18.1.Core.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.XtraScheduler.v18.1.Core.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v18.1.Extensions.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.XtraScheduler.v18.1.Extensions.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v18.1.Reporting.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.XtraScheduler.v18.1.Reporting.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.XtraScheduler.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraSpellChecker.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.XtraSpellChecker.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraSpreadsheet.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.XtraSpreadsheet.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.XtraTreeList.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.XtraVerticalGrid.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraWizard.v18.1.resources, Version=18.1.0.0, Culture=de, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\tr\DevExpress.XtraWizard.v18.1.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Admin.aspx" />
+    <Content Include="Admin\AdminAyarlariDuzenle.aspx" />
+    <Content Include="Admin\css\font-face.css" />
+    <Content Include="Admin\css\theme.css" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-100.svg" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-100italic.svg" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-200.svg" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-200italic.svg" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-300.svg" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-300italic.svg" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-500.svg" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-500italic.svg" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-600.svg" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-600italic.svg" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-700.svg" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-700italic.svg" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-800.svg" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-800italic.svg" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-900.svg" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-900italic.svg" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-italic.svg" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-regular.svg" />
+    <Content Include="Admin\GaleriAyarlar.aspx" />
+    <Content Include="Admin\Giderler.aspx" />
+    <Content Include="Admin\images\bg-title-01.jpg" />
+    <Content Include="Admin\images\bg-title-02.jpg" />
+    <Content Include="Admin\images\icon\avatar-01.jpg" />
+    <Content Include="Admin\images\icon\avatar-02.jpg" />
+    <Content Include="Admin\images\icon\avatar-03.jpg" />
+    <Content Include="Admin\images\icon\avatar-04.jpg" />
+    <Content Include="Admin\images\icon\avatar-05.jpg" />
+    <Content Include="Admin\images\icon\avatar-06.jpg" />
+    <Content Include="Admin\images\icon\avatar-big-01.jpg" />
+    <Content Include="Admin\images\icon\logo-blue.png" />
+    <Content Include="Admin\images\icon\logo-mini.png" />
+    <Content Include="Admin\images\icon\logo-white.png" />
+    <Content Include="Admin\images\icon\logo.png" />
+    <Content Include="Admin\images\icon\Untitled-1.jpg" />
+    <Content Include="Admin\js\js\jssor.slider-27.4.0.min.js" />
+    <Content Include="Admin\js\main.js" />
+    <Content Include="Admin\SliderAyarlar.aspx" />
+    <Content Include="Admin\UstDuzeyYonetici.aspx" />
+    <Content Include="Admin\vendor\animsition\animsition.min.css" />
+    <Content Include="Admin\vendor\animsition\animsition.min.js" />
+    <Content Include="Admin\vendor\bootstrap-4.1\bootstrap.min.css" />
+    <Content Include="Admin\vendor\bootstrap-4.1\bootstrap.min.js" />
+    <Content Include="Admin\vendor\bootstrap-4.1\popper.min.js" />
+    <Content Include="Admin\vendor\bootstrap-progressbar\bootstrap-progressbar-3.3.4.min.css" />
+    <Content Include="Admin\vendor\bootstrap-progressbar\bootstrap-progressbar.min.js" />
+    <Content Include="Admin\vendor\chartjs\Chart.bundle.min.js" />
+    <Content Include="Admin\vendor\circle-progress\circle-progress.js" />
+    <Content Include="Admin\vendor\circle-progress\circle-progress.min.js" />
+    <Content Include="Admin\vendor\countdown\countdowntime.js" />
+    <Content Include="Admin\vendor\countdown\jquery.countdown.min.js" />
+    <Content Include="Admin\vendor\countdown\moment-timezone-with-data.min.js" />
+    <Content Include="Admin\vendor\countdown\moment-timezone.min.js" />
+    <Content Include="Admin\vendor\countdown\moment.min.js" />
+    <Content Include="Admin\vendor\counter-up\jquery.counterup.min.js" />
+    <Content Include="Admin\vendor\counter-up\jquery.waypoints.min.js" />
+    <Content Include="Admin\vendor\counter-up\waypoints.min.js" />
+    <Content Include="Admin\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Admin\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Admin\vendor\font-awesome-4.7\css\font-awesome.css" />
+    <Content Include="Admin\vendor\font-awesome-4.7\css\font-awesome.min.css" />
+    <Content Include="Admin\vendor\font-awesome-4.7\fonts\fontawesome-webfont.svg" />
+    <Content Include="Admin\vendor\font-awesome-4.7\HELP-US-OUT.txt" />
+    <Content Include="Admin\vendor\font-awesome-5\css\fontawesome-all.min.css" />
+    <Content Include="Admin\vendor\font-awesome-5\webfonts\fa-brands-400.svg" />
+    <Content Include="Admin\vendor\font-awesome-5\webfonts\fa-regular-400.svg" />
+    <Content Include="Admin\vendor\font-awesome-5\webfonts\fa-solid-900.svg" />
+    <Content Include="Admin\vendor\jquery-3.2.1.min.js" />
+    <Content Include="Admin\vendor\jquery-ui.min.js" />
+    <Content Include="Admin\vendor\lightbox2\dist\css\lightbox.css" />
+    <Content Include="Admin\vendor\lightbox2\dist\images\close.png" />
+    <Content Include="Admin\vendor\lightbox2\dist\images\loading.gif" />
+    <Content Include="Admin\vendor\lightbox2\dist\images\next.png" />
+    <Content Include="Admin\vendor\lightbox2\dist\images\prev.png" />
+    <Content Include="Admin\vendor\lightbox2\dist\js\lightbox-plus-jquery.js" />
+    <Content Include="Admin\vendor\lightbox2\dist\js\lightbox-plus-jquery.min.js" />
+    <Content Include="Admin\vendor\lightbox2\dist\js\lightbox.js" />
+    <Content Include="Admin\vendor\lightbox2\dist\js\lightbox.min.js" />
+    <Content Include="Admin\vendor\lightbox2\src\css\lightbox.css" />
+    <Content Include="Admin\vendor\lightbox2\src\images\close.png" />
+    <Content Include="Admin\vendor\lightbox2\src\images\loading.gif" />
+    <Content Include="Admin\vendor\lightbox2\src\images\next.png" />
+    <Content Include="Admin\vendor\lightbox2\src\images\prev.png" />
+    <Content Include="Admin\vendor\lightbox2\src\js\lightbox.js" />
+    <Content Include="Admin\vendor\mdi-font\css\material-design-iconic-font.css" />
+    <Content Include="Admin\vendor\mdi-font\css\material-design-iconic-font.min.css" />
+    <Content Include="Admin\vendor\mdi-font\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Admin\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Admin\vendor\perfect-scrollbar\perfect-scrollbar.js" />
+    <Content Include="Admin\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Admin\vendor\progressbar\progressbar.js" />
+    <Content Include="Admin\vendor\progressbar\progressbar.min.js" />
+    <Content Include="Admin\vendor\select2\select2.min.css" />
+    <Content Include="Admin\vendor\select2\select2.min.js" />
+    <Content Include="Admin\vendor\slick\ajax-loader.gif" />
+    <Content Include="Admin\vendor\slick\fonts\slick.svg" />
+    <Content Include="Admin\vendor\slick\slick-theme.css" />
+    <Content Include="Admin\vendor\slick\slick.css" />
+    <Content Include="Admin\vendor\slick\slick.js" />
+    <Content Include="Admin\vendor\slick\slick.min.js" />
+    <Content Include="Admin\vendor\smk-accordion\accordion.css" />
+    <Content Include="Admin\vendor\smk-accordion\accordion.js" />
+    <Content Include="Admin\vendor\smk-accordion\accordion.min.js" />
+    <Content Include="Admin\vendor\sweetalert\sweetalert.min.js" />
+    <Content Include="Admin\vendor\vector-map\jquery.vmap.brazil.js" />
+    <Content Include="Admin\vendor\vector-map\jquery.vmap.europe.js" />
+    <Content Include="Admin\vendor\vector-map\jquery.vmap.france.js" />
+    <Content Include="Admin\vendor\vector-map\jquery.vmap.germany.js" />
+    <Content Include="Admin\vendor\vector-map\jquery.vmap.js" />
+    <Content Include="Admin\vendor\vector-map\jquery.vmap.min.js" />
+    <Content Include="Admin\vendor\vector-map\jquery.vmap.russia.js" />
+    <Content Include="Admin\vendor\vector-map\jquery.vmap.sampledata.js" />
+    <Content Include="Admin\vendor\vector-map\jquery.vmap.usa.js" />
+    <Content Include="Admin\vendor\vector-map\jquery.vmap.world.js" />
+    <Content Include="Admin\vendor\vector-map\jqvmap.min.css" />
+    <Content Include="Admin\vendor\wow\animate.css" />
+    <Content Include="Admin\vendor\wow\wow.min.js" />
+    <Content Include="Admin\Yorumlar.aspx" />
+    <Content Include="Anasayfa.aspx" />
+    <Content Include="contactform\contactform.js" />
+    <Content Include="contactform\readme.txt" />
+    <Content Include="css\animate.css" />
+    <Content Include="css\animate.min.css" />
+    <Content Include="css\bootstrap-theme.css" />
+    <Content Include="css\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\overwrite.css" />
+    <Content Include="css\style.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Galeri.aspx" />
+    <Content Include="Giris.aspx" />
+    <Content Include="images\Galeri\basketbolsahasi_500x501.jpg" />
+    <Content Include="images\Galeri\bina_500x501.jpg" />
+    <Content Include="images\Galeri\kantin_500x501.jpg" />
+    <Content Include="images\Galeri\odalar_500x501.jpg" />
+    <Content Include="images\Ogrenci\ahmetarmutcu.jpg" />
+    <Content Include="images\Slider\slider1.jpg" />
+    <Content Include="images\Yoneticiler\DoganAkdağ.jpg" />
+    <Content Include="images\Yoneticiler\omerfaruk.jpg" />
+    <Content Include="img\1.jpg" />
+    <Content Include="img\3.png" />
+    <Content Include="img\6.jpg" />
+    <Content Include="img\7.jpg" />
+    <Content Include="img\logolar\headerlogo_105x105.jpg" />
+    <Content Include="img\logolar\headerlogo_120x120.jpg" />
+    <Content Include="img\logolar\logo1.png" />
+    <Content Include="img\logolar\logo2.png" />
+    <Content Include="img\logolar\logo3.png" />
+    <Content Include="img\logolar\logo4.png" />
+    <Content Include="img\map.jpg" />
+    <Content Include="img\ri.png" />
+    <Content Include="img\rib.png" />
+    <Content Include="images\Slider\slider2.jpg" />
+    <Content Include="images\Slider\slider3.jpg" />
+    <Content Include="img\team\1.png" />
+    <Content Include="img\team\2.png" />
+    <Content Include="img\team\3.png" />
+    <Content Include="img\team\team1.jpg" />
+    <Content Include="img\team\team2.jpg" />
+    <Content Include="img\team\team3.jpg" />
+    <Content Include="img\team\team4.jpg" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\custom.min.js" />
+    <Content Include="js\dashboard1.js" />
+    <Content Include="js\fliplightbox.min.js" />
+    <Content Include="js\functions.js" />
+    <Content Include="js\jquery-2.1.1.min.js" />
+    <Content Include="js\jquery.easing.min.js" />
+    <Content Include="js\jquery.slimscroll.js" />
+    <Content Include="js\jssor.slider-27.4.0.min.js" />
+    <Content Include="js\morris-data.js" />
+    <Content Include="js\parallax.min.js" />
+    <Content Include="js\toastr.js" />
+    <Content Include="js\waves.js" />
+    <Content Include="js\wow.min.js" />
+    <Content Include="Admin\Notlar.aspx" />
+    <Content Include="Admin\Odalar.aspx" />
+    <Content Include="Admin\Ogrenci.aspx" />
+    <Content Include="Admin\Personeller.aspx" />
+    <Content Include="SayfaBulunamadi.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="YurtHakkinda.aspx" />
+    <Content Include="YurtYoneticileri.aspx" />
+    <Content Include="Iletisim.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminAyarlariDuzenle.aspx.cs">
+      <DependentUpon>AdminAyarlariDuzenle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminAyarlariDuzenle.aspx.designer.cs">
+      <DependentUpon>AdminAyarlariDuzenle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GaleriAyarlar.aspx.cs">
+      <DependentUpon>GaleriAyarlar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GaleriAyarlar.aspx.designer.cs">
+      <DependentUpon>GaleriAyarlar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Giderler.aspx.cs">
+      <DependentUpon>Giderler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Giderler.aspx.designer.cs">
+      <DependentUpon>Giderler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SliderAyarlar.aspx.cs">
+      <DependentUpon>SliderAyarlar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SliderAyarlar.aspx.designer.cs">
+      <DependentUpon>SliderAyarlar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UstDuzeyYonetici.aspx.cs">
+      <DependentUpon>UstDuzeyYonetici.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UstDuzeyYonetici.aspx.designer.cs">
+      <DependentUpon>UstDuzeyYonetici.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Yorumlar.aspx.cs">
+      <DependentUpon>Yorumlar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Yorumlar.aspx.designer.cs">
+      <DependentUpon>Yorumlar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ana.Master.cs">
+      <DependentUpon>Ana.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ana.Master.designer.cs">
+      <DependentUpon>Ana.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Anasayfa.aspx.cs">
+      <DependentUpon>Anasayfa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anasayfa.aspx.designer.cs">
+      <DependentUpon>Anasayfa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Galeri.aspx.cs">
+      <DependentUpon>Galeri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Galeri.aspx.designer.cs">
+      <DependentUpon>Galeri.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Notlar.aspx.cs">
+      <DependentUpon>Notlar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Notlar.aspx.designer.cs">
+      <DependentUpon>Notlar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Odalar.aspx.cs">
+      <DependentUpon>Odalar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Odalar.aspx.designer.cs">
+      <DependentUpon>Odalar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Ogrenci.aspx.cs">
+      <DependentUpon>Ogrenci.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Ogrenci.aspx.designer.cs">
+      <DependentUpon>Ogrenci.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Personeller.aspx.cs">
+      <DependentUpon>Personeller.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Personeller.aspx.designer.cs">
+      <DependentUpon>Personeller.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Giris.aspx.cs">
+      <DependentUpon>Giris.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Giris.aspx.designer.cs">
+      <DependentUpon>Giris.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SayfaBulunamadi.aspx.cs">
+      <DependentUpon>SayfaBulunamadi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SayfaBulunamadi.aspx.designer.cs">
+      <DependentUpon>SayfaBulunamadi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YurtHakkinda.aspx.cs">
+      <DependentUpon>YurtHakkinda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YurtHakkinda.aspx.designer.cs">
+      <DependentUpon>YurtHakkinda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YurtYoneticileri.aspx.cs">
+      <DependentUpon>YurtYoneticileri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YurtYoneticileri.aspx.designer.cs">
+      <DependentUpon>YurtYoneticileri.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Iletisim.aspx.cs">
+      <DependentUpon>Iletisim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Iletisim.aspx.designer.cs">
+      <DependentUpon>Iletisim.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Ana.Master" />
+    <Content Include="Admin\Admin.Master" />
+    <Content Include="css\bootstrap-theme.css.map" />
+    <Content Include="css\bootstrap.css.map" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-100.eot" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-100.ttf" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-100.woff" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-100.woff2" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-100italic.eot" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-100italic.ttf" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-100italic.woff" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-100italic.woff2" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-200.eot" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-200.ttf" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-200.woff" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-200.woff2" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-200italic.eot" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-200italic.ttf" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-200italic.woff" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-200italic.woff2" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-300.eot" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-300.ttf" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-300.woff" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-300.woff2" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-300italic.eot" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-300italic.ttf" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-300italic.woff" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-300italic.woff2" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-500.eot" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-500.ttf" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-500.woff" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-500.woff2" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-500italic.eot" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-500italic.ttf" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-500italic.woff" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-500italic.woff2" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-600.eot" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-600.ttf" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-600.woff" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-600.woff2" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-600italic.eot" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-600italic.ttf" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-600italic.woff" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-600italic.woff2" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-700.eot" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-700.ttf" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-700.woff" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-700.woff2" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-700italic.eot" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-700italic.ttf" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-700italic.woff" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-700italic.woff2" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-800.eot" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-800.ttf" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-800.woff" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-800.woff2" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-800italic.eot" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-800italic.ttf" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-800italic.woff" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-800italic.woff2" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-900.eot" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-900.ttf" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-900.woff" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-900.woff2" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-900italic.eot" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-900italic.ttf" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-900italic.woff" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-900italic.woff2" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-italic.eot" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-italic.ttf" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-italic.woff" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-italic.woff2" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-regular.eot" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-regular.ttf" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-regular.woff" />
+    <Content Include="Admin\fonts\poppins\poppins-v5-latin-regular.woff2" />
+    <Content Include="Admin\vendor\font-awesome-4.7\fonts\fontawesome-webfont.eot" />
+    <Content Include="Admin\vendor\font-awesome-4.7\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Admin\vendor\font-awesome-4.7\fonts\fontawesome-webfont.woff" />
+    <Content Include="Admin\vendor\font-awesome-4.7\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Admin\vendor\font-awesome-4.7\fonts\FontAwesome.otf" />
+    <Content Include="Admin\vendor\font-awesome-5\webfonts\fa-brands-400.eot" />
+    <Content Include="Admin\vendor\font-awesome-5\webfonts\fa-brands-400.ttf" />
+    <Content Include="Admin\vendor\font-awesome-5\webfonts\fa-brands-400.woff" />
+    <Content Include="Admin\vendor\font-awesome-5\webfonts\fa-brands-400.woff2" />
+    <Content Include="Admin\vendor\font-awesome-5\webfonts\fa-regular-400.eot" />
+    <Content Include="Admin\vendor\font-awesome-5\webfonts\fa-regular-400.ttf" />
+    <Content Include="Admin\vendor\font-awesome-5\webfonts\fa-regular-400.woff" />
+    <Content Include="Admin\vendor\font-awesome-5\webfonts\fa-regular-400.woff2" />
+    <Content Include="Admin\vendor\font-awesome-5\webfonts\fa-solid-900.eot" />
+    <Content Include="Admin\vendor\font-awesome-5\webfonts\fa-solid-900.ttf" />
+    <Content Include="Admin\vendor\font-awesome-5\webfonts\fa-solid-900.woff" />
+    <Content Include="Admin\vendor\font-awesome-5\webfonts\fa-solid-900.woff2" />
+    <Content Include="Admin\vendor\lightbox2\dist\js\lightbox-plus-jquery.min.map" />
+    <Content Include="Admin\vendor\lightbox2\dist\js\lightbox.min.map" />
+    <Content Include="Admin\vendor\mdi-font\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Admin\vendor\mdi-font\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Admin\vendor\mdi-font\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Admin\vendor\mdi-font\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Admin\vendor\slick\config.rb" />
+    <Content Include="Admin\vendor\slick\fonts\slick.eot" />
+    <Content Include="Admin\vendor\slick\fonts\slick.ttf" />
+    <Content Include="Admin\vendor\slick\fonts\slick.woff" />
+    <Content Include="Admin\vendor\slick\slick-theme.less" />
+    <Content Include="Admin\vendor\slick\slick-theme.scss" />
+    <Content Include="Admin\vendor\slick\slick.less" />
+    <Content Include="Admin\vendor\slick\slick.scss" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="img\slider\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63619</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63619/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
